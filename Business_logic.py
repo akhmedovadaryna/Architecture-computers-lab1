@@ -1,10 +1,20 @@
 __author__ = 'darina'
+import json
+file_name = "phonebook"
 
-list_with_dict = [ {'number': 1234,'FIO': 'Akhmedova','street': 'Lesi','house': 1},
-                   {'number': 5434,'FIO': 'Ivanov','street': 'Vasi','house': 1},
-                   {'number': 5436,'FIO': 'Ivanov','street': 'Vasi','house': 2}
-                 ]
-print(list_with_dict)
+
+list_with_dict = []
+
+def save_phonebook():
+    with open(file_name, 'w') as file:
+        json.dump(list_with_dict, file)
+
+
+def init_phonebook():
+    file = open(file_name, 'r')
+    global list_with_dict
+    list_with_dict = json.load(file)
+    file.close()
 
 
 def add(new_number, new_FIO, new_street, new_house):
