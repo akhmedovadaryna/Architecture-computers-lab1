@@ -3,7 +3,7 @@ __author__ = 'alexandr'
 import Business_logic as bl
 
 #вывод приветствия
-print("PHONEBOOK v1.0.1")
+print("PHONEBOOK v1.0.2")
 
 bl.get_phonebook()
 
