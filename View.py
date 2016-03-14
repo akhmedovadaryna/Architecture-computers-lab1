@@ -1,13 +1,10 @@
 __author__ = 'vadym'
 
 file_name = "phonebook"
-import Business_logic as bl
 
 
-def view_phonebook():  # вывод фонбука
-    for i in bl.list_with_dict:
-        print(i)
-
+def view_phonebook(phonebook):  # вывод фонбука
+    print(phonebook)
 
 def read_new_contact():  # ввод новой записи
     print("Telephone number: ")
@@ -20,8 +17,8 @@ def read_new_contact():  # ввод новой записи
     new_house = input()
 
 
-def view_new_contact():  # вывод добавленной строки
-    print(bl.list_with_dict)
+def view_new_contact(contact):  # вывод добавленной строки
+    print(contact)
 
 
 def del_choice():  # выбор что удалять
