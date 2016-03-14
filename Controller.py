@@ -1,9 +1,5 @@
-__author__ = 'alexandr'
-
 import Business_logic as bl
 import View as vw
-
-
 
 
 def menu():
@@ -21,12 +17,14 @@ def menu():
     print("Press 0 if you want exit")
     return input("Enter your choise :  ")
 
+
 def press_any_key():
     '''
     Wait for user
     :return: None
     '''
     input("Press Enter to continue...")
+
 
 def view():
     '''
@@ -35,6 +33,7 @@ def view():
     '''
     vw.view_phonebook(bl.list_with_dict)
     press_any_key()
+
 
 def add():
     '''
@@ -48,6 +47,7 @@ def add():
     print("Successfull!")
     press_any_key()
 
+
 def delete():
     '''
     Delete record
@@ -60,6 +60,7 @@ def delete():
         print("Not found!")
     press_any_key()
 
+
 def edit():
     '''
     Edit record
@@ -70,18 +71,19 @@ def edit():
     # ввод новых значений
     number, FIO, street, house = vw.new_values()
 
-    if (bl.change(key, number, FIO, street, house )):
+    if (bl.change(key, number, FIO, street, house)):
         print("Successfull!")
     else:
         print("Not found!")
     press_any_key()
+
 
 def find():
     '''
     Search in Phonebook
     :return: None
     '''
-     # ввод критериев поиска
+    # ввод критериев поиска
     number, FIO, street, house = vw.what_to_find()
     vw.view_phonebook(bl.find(number, FIO, street, house))
     press_any_key()
@@ -120,5 +122,3 @@ while(1):
         vw.uncorrect()
 
 print("Thank you!")
-
-
