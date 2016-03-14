@@ -1,1 +1,7 @@
-[{"number": "2222", "street": "QQQ", "house": 55, "FIO": "III"}, {"number": "454", "street": "5", "house": "4", "FIO": "3"}]
+[{"number": "380991966445", "street": "Slobidska", "house": "14", "FIO": "Serov"},
+ {"number": "380991875643", "street": "Lise", "house": "44", "FIO": "Ivanov"},
+ {"number": "380986247641", "street": "Lilova", "house": "18", "FIO": "Perov"},
+ {"number": "380782634821", "street": "Perova", "house": "26", "FIO": "Serov"},
+ {"number": "380954671937", "street": "Slobidska", "house": "4", "FIO": "Komarov"},
+ {"number": "380672846273", "street": "Lesi", "house": "4", "FIO": "Ivanov"},
+ {"number": "805023874201", "street": "Lilova", "house": "14", "FIO": "Ivanov"},]
