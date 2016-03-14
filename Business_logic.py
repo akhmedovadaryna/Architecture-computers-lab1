@@ -20,6 +20,7 @@ def init_phonebook():
 def add(new_number, new_FIO, new_street, new_house):
 
     list_with_dict.append({'number': new_number, 'FIO': new_FIO, 'street': new_street, 'house': new_house})
+    save_phonebook()
 
 def delete(value):
     i = 0
@@ -28,6 +29,7 @@ def delete(value):
             i = i+1
         else:
             list_with_dict.pop(i)
+    save_phonebook()
 
 def change(key, number = '', FIO = '', street = '', house = ''):
 
@@ -42,6 +44,7 @@ def change(key, number = '', FIO = '', street = '', house = ''):
         else:
             dct[list[j]]=l[j]
         j = j+1
+     save_phonebook()
 
 def find (number = '', FIO = '', street = '', house = ''):
      i = 0
