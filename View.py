@@ -3,8 +3,10 @@ __author__ = 'vadym'
 file_name = "phonebook"
 
 
-def view_phonebook(phonebook):  # вывод фонбука
-    print(phonebook)
+def view_phonebook(list_with_dict):  # вывод фонбука
+    for i in list_with_dict:
+        print(i)
+        print
 
 def read_new_contact():  # ввод новой записи
     print("Telephone number: ")
@@ -15,10 +17,6 @@ def read_new_contact():  # ввод новой записи
     new_street = input()
     print("House: ")
     new_house = input()
-
-
-def view_new_contact(contact):  # вывод добавленной строки
-    print(contact)
 
 
 def del_choice():  # выбор что удалять
@@ -43,8 +41,15 @@ def new_values(): # ввод новых значений
 
 
 def what_to_find(): #ввод критериев поиска
-    print("Enter what do you want to find: ")
-    something = input()
+    print("Enter the search criteria (if it's not necessary you don't need to write it): ")
+    print("Enter searching number: ")
+    number = input()
+    print("Enter searching FIO: ")
+    FIO = input()
+    print("Enter searching street: ")
+    street = input()
+    print("Enter searching house: ")
+    house = input()
 
 def uncorrect(): # некорректный ввод
     print("You have entered invalid values!")
