@@ -17,14 +17,14 @@ def init_phonebook():
     file.close()
 
 
-def add(new_number, new_FIO, new_street, new_house):
+def add(number, FIO, street, house):
     """
     Add a new entry in the phone book
     >>> add(1111,'III', 'QQQ', 55)
     1111
     """
-    dict = {'number': number, 'FIO': FIO, 'street': street, 'house': house}
-    list_with_dict.append(dict)
+    list_with_dict.append({'number': number, 'FIO': FIO,
+                           'street': street, 'house': house})
     save_phonebook()
     i = len(list_with_dict)-1
     dct = list_with_dict[i]

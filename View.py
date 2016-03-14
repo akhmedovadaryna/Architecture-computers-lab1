@@ -6,7 +6,7 @@ file_name = "phonebook"
 def view_phonebook(list_with_dict):  # вывод фонбука
     for i in list_with_dict:
         print(i)
-        print
+
 
 def read_new_contact():  # ввод новой записи
     print("Telephone number: ")
@@ -25,13 +25,14 @@ def del_choice():  # выбор что удалять
     phone_number = input()
     return phone_number
 
+
 def edit_choice():  # выбор строчки для редактирования
     print("Print what number do you want to edit: ")
     key = input()
     return key
 
 
-def new_values(): # ввод новых значений
+def new_values():  # ввод новых значений
     print("Enter new number: ")
     number = input()
     print("Enter new FIO: ")
@@ -43,8 +44,9 @@ def new_values(): # ввод новых значений
     return (number, FIO, street, house)
 
 
-def what_to_find(): #ввод критериев поиска
-    print("Enter the search criteria (if it's not necessary you don't need to write it): ")
+def what_to_find():  # ввод критериев поиска
+    print("Enter the search criteria" +
+          "(if it's not necessary you don't need to write it): ")
     print("Enter searching number: ")
     number = input()
     print("Enter searching FIO: ")
@@ -55,5 +57,6 @@ def what_to_find(): #ввод критериев поиска
     house = input()
     return (number, FIO, street, house)
 
-def uncorrect(): # некорректный ввод
+
+def uncorrect():  # некорректный ввод
     print("You have entered invalid values!")
