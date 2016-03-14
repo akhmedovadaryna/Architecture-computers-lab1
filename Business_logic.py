@@ -20,48 +20,28 @@ def init_phonebook():
 def add(new_number, new_FIO, new_street, new_house):
 
     list_with_dict.append({'number': new_number, 'FIO': new_FIO, 'street': new_street, 'house': new_house})
-    save_phonebook()
 
 def delete(value):
-    '''
-    >>> delete(1111)
-    0
-    '''
-
     i = 0
-    f = 0
     for dct in list_with_dict:
-        if dct.get('number') != value:
+        if dct.get('number')!=value:
             i = i+1
         else:
             list_with_dict.pop(i)
-            f = 1
-    save_phonebook()
-    return f
 
 def change(key, number = '', FIO = '', street = '', house = ''):
 
-    print(key)
-    print(number)
-    print(FIO)
-    print(street)
-    print(house)
-
-    l = [number, FIO, street, house]
-    list = ['number', 'FIO', 'street', 'house']
-    for dct in list_with_dict:
-        print(dct)
-        if dct.get('number')==key:
-            j = 0
-            while j != 3:
-                print(j)
-                if l[j]=='':
-                    j = j+1
-                    continue
-                else:
-                    dct[list[j]]=l[j]
-                    j = j+1
-    save_phonebook()
+     l = [number, FIO, street, house]
+     list = ['number', 'FIO', 'street', 'house']
+     for dct in list_with_dict:
+      if dct.get('number')==key:
+       j = 0
+       while j != 3:
+        if l[j]=='':
+            continue
+        else:
+            dct[list[j]]=l[j]
+        j = j+1
 
 def find (number = '', FIO = '', street = '', house = ''):
      i = 0

@@ -1,13 +1,12 @@
 __author__ = 'vadym'
 
 file_name = "phonebook"
-import Business_logic as bl
 
 
-def view_phonebook():  # вывод фонбука
-    for i in bl.list_with_dict:
+def view_phonebook(list_with_dict):  # вывод фонбука
+    for i in list_with_dict:
         print(i)
-
+        print
 
 def read_new_contact():  # ввод новой записи
     print("Telephone number: ")
@@ -18,20 +17,18 @@ def read_new_contact():  # ввод новой записи
     new_street = input()
     print("House: ")
     new_house = input()
-
-
-def view_new_contact():  # вывод добавленной строки
-    print(bl.list_with_dict)
+    return (new_number, new_FIO, new_street, new_house)
 
 
 def del_choice():  # выбор что удалять
     print("Choose what number do you want to delete: ")
     phone_number = input()
-
+    return phone_number
 
 def edit_choice():  # выбор строчки для редактирования
     print("Print what number do you want to edit: ")
     key = input()
+    return key
 
 
 def new_values(): # ввод новых значений
@@ -43,11 +40,20 @@ def new_values(): # ввод новых значений
     street = input()
     print("Enter new house: ")
     house = input()
+    return (number, FIO, street, house)
 
 
 def what_to_find(): #ввод критериев поиска
-    print("Enter what do you want to find: ")
-    something = input()
+    print("Enter the search criteria (if it's not necessary you don't need to write it): ")
+    print("Enter searching number: ")
+    number = input()
+    print("Enter searching FIO: ")
+    FIO = input()
+    print("Enter searching street: ")
+    street = input()
+    print("Enter searching house: ")
+    house = input()
+    return (number, FIO, street, house)
 
 def uncorrect(): # некорректный ввод
     print("You have entered invalid values!")
