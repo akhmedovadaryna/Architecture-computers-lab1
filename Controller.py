@@ -1,12 +1,12 @@
-import Business_logic as bl
-import View as vw
+import Business_logic
+import View
 
 
 def menu():
-    '''
+    """
     print MENU and ask user's choise
     :return: user's choise
-    '''
+    """
 
     print("\n MENU ")
     print("Press 1 if you want see phonebook")
@@ -19,42 +19,42 @@ def menu():
 
 
 def press_any_key():
-    '''
+    """
     Wait for user
     :return: None
-    '''
+    """
     input("Press Enter to continue...")
 
 
 def view():
-    '''
+    """
     Print Phonebook
     :return: None
-    '''
-    vw.view_phonebook(bl.list_with_dict)
+    """
+    View.view_phonebook(Business_logic.list_with_dict)
     press_any_key()
 
 
 def add():
-    '''
+    """
     Add new record
     :return: None
-    '''
+    """
     # ввод новой записи
-    new_number, new_FIO, new_street, new_house = vw.read_new_contact()
-    bl.add(new_number, new_FIO, new_street, new_house)
+    new_number, new_fio, new_street, new_house = View.read_new_contact()
+    Business_logic.add(new_number, new_fio, new_street, new_house)
 
     print("Successfull!")
     press_any_key()
 
 
 def delete():
-    '''
+    """
     Delete record
     :return: None
-    '''
+    """
     # выбор что удалять
-    if (bl.delete(vw.del_choice())):
+    if Business_logic.delete(View.del_choice()):
         print("Successfull!")
     else:
         print("Not found!")
@@ -62,16 +62,16 @@ def delete():
 
 
 def edit():
-    '''
+    """
     Edit record
     :return: None
-    '''
+    """
     # выбор строчки для редактирования
-    key = vw.edit_choice()
+    key = View.edit_choice()
     # ввод новых значений
-    number, FIO, street, house = vw.new_values()
+    number, fio, street, house = View.new_values()
 
-    if (bl.change(key, number, FIO, street, house)):
+    if Business_logic.change(key, number, fio, street, house):
         print("Successfull!")
     else:
         print("Not found!")
@@ -79,21 +79,21 @@ def edit():
 
 
 def find():
-    '''
+    """
     Search in Phonebook
     :return: None
-    '''
+    """
     # ввод критериев поиска
-    number, FIO, street, house = vw.what_to_find()
-    vw.view_phonebook(bl.find(number, FIO, street, house))
+    number, fio, street, house = View.what_to_find()
+    View.view_phonebook(Business_logic.find(number, fio, street, house))
     press_any_key()
 
 
 # вывод приветствия
 print("PHONEBOOK v1.0.3")
-bl.init_phonebook()
+Business_logic.init_phonebook()
 
-while(1):
+while 1:
 
     choise = menu()
     if choise == '0':
@@ -119,6 +119,6 @@ while(1):
         find()
     else:
         # некорректный выбор
-        vw.uncorrect()
+        View.uncorrect()
 
 print("Thank you!")

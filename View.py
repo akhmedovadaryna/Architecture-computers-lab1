@@ -1,7 +1,5 @@
 __author__ = 'vadym'
 
-file_name = "phonebook"
-
 
 def view_phonebook(list_with_dict):  # вывод фонбука
     for i in list_with_dict:
@@ -12,12 +10,12 @@ def read_new_contact():  # ввод новой записи
     print("Telephone number: ")
     new_number = input()
     print("FIO: ")
-    new_FIO = input()
+    new_fio = input()
     print("Street: ")
     new_street = input()
     print("House: ")
     new_house = input()
-    return (new_number, new_FIO, new_street, new_house)
+    return new_number, new_fio, new_street, new_house
 
 
 def del_choice():  # выбор что удалять
@@ -36,12 +34,12 @@ def new_values():  # ввод новых значений
     print("Enter new number: ")
     number = input()
     print("Enter new FIO: ")
-    FIO = input()
+    fio = input()
     print("Enter new street: ")
     street = input()
     print("Enter new house: ")
     house = input()
-    return (number, FIO, street, house)
+    return number, fio, street, house
 
 
 def what_to_find():  # ввод критериев поиска
@@ -50,12 +48,12 @@ def what_to_find():  # ввод критериев поиска
     print("Enter searching number: ")
     number = input()
     print("Enter searching FIO: ")
-    FIO = input()
+    fio = input()
     print("Enter searching street: ")
     street = input()
     print("Enter searching house: ")
     house = input()
-    return (number, FIO, street, house)
+    return number, fio, street, house
 
 
 def uncorrect():  # некорректный ввод
