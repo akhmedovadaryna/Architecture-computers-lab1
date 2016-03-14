@@ -26,7 +26,8 @@ def del_choice():  # выбор что удалять
 
 def edit_choice():  # выбор строчки для редактирования
     print("Print what number do you want to edit: ")
-    key = int(input())
+
+    key = input()
     return key
 
 
