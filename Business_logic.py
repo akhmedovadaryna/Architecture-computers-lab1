@@ -18,11 +18,23 @@ def init_phonebook():
 
 
 def add(new_number, new_FIO, new_street, new_house):
-
+    """
+    Add a new entry in the phone book
+    >>> add(1111,'III', 'QQQ', 55)
+    1111
+    """
     list_with_dict.append({'number': new_number, 'FIO': new_FIO, 'street': new_street, 'house': new_house})
     save_phonebook()
+    i = len(list_with_dict)-1
+    dct = list_with_dict[i]
+    return dct.get('number')
 
 def delete(value):
+    """
+    Delete an entry from the phone book
+    >>> delete(1234)
+    0
+    """
     i = 0
     flag = 0
     for dct in list_with_dict:
@@ -35,6 +47,11 @@ def delete(value):
     return flag
 
 def change(key, number = '', FIO = '', street = '', house = ''):
+    """
+    Change the entry in the phone book
+    >>> change(4567,435,'III')
+    0
+    """
     flag = 0
     l = [number, FIO, street, house]
     list = ['number', 'FIO', 'street', 'house']
@@ -53,6 +70,9 @@ def change(key, number = '', FIO = '', street = '', house = ''):
     return flag
 
 def find (number = '', FIO = '', street = '', house = ''):
+    """
+    Find an entry in the phone book
+    """
     i = 0
     q = []
     l = ['number','FIO', 'street', 'house']
@@ -71,5 +91,3 @@ def find (number = '', FIO = '', street = '', house = ''):
         if a == 4-b:
             q.append(dct)
     return q
-
-
