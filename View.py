@@ -17,16 +17,18 @@ def read_new_contact():  # ввод новой записи
     new_street = input()
     print("House: ")
     new_house = input()
+    return (new_number, new_FIO, new_street, new_house)
 
 
 def del_choice():  # выбор что удалять
     print("Choose what number do you want to delete: ")
     phone_number = input()
-
+    return phone_number
 
 def edit_choice():  # выбор строчки для редактирования
     print("Print what number do you want to edit: ")
     key = input()
+    return key
 
 
 def new_values(): # ввод новых значений
@@ -38,6 +40,7 @@ def new_values(): # ввод новых значений
     street = input()
     print("Enter new house: ")
     house = input()
+    return (number, FIO, street, house)
 
 
 def what_to_find(): #ввод критериев поиска
@@ -50,6 +53,7 @@ def what_to_find(): #ввод критериев поиска
     street = input()
     print("Enter searching house: ")
     house = input()
+    return (number, FIO, street, house)
 
 def uncorrect(): # некорректный ввод
     print("You have entered invalid values!")
