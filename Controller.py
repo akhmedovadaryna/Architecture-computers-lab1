@@ -29,14 +29,18 @@ while(1):
         break
     elif choise == '1':
         # вывод фонебука
+
         vw.view_phonebook(bl.list_with_dict)
         press_any_key()
+
     elif choise == '2':
         # ввод новой записи
-        new_number, new_FIO, new_street, new_house= vw.read_new_contact()
+
+        new_number, new_FIO, new_street, new_house = vw.read_new_contact()
         bl.add(new_number, new_FIO, new_street, new_house)
         print("Successfull!")
         press_any_key()
+
     elif choise == '3':
         # выбор что удалять
 
@@ -45,17 +49,24 @@ while(1):
         else:
             print("Not found!")
         press_any_key()
+
     elif choise == '4':
         # выбор строчки для редактирования
         key = vw.edit_choice()
         # ввод новых значений
         number, FIO, street, house = vw.new_values()
-        bl.change(key, number, FIO, street, house )
+
+        if (bl.change(key, number, FIO, street, house )):
+            print("Successfull!")
+        else:
+            print("Not found!")
+        press_any_key()
+
     elif choise == '5':
-        pass
         # ввод критериев поиска
-      #  vw.what_to_find()
-      #  bl.find(something)
+        number, FIO, street, house = vw.what_to_find()
+        vw.view_phonebook(bl.find(number, FIO, street, house))
+        press_any_key()
     else:
         # некорректный выбор
         vw.uncorrect()
