@@ -1,12 +1,8 @@
 
-import Controller
-
-
-list_with_dict = Controller.list_with_dict
 
 
 
-def add(number, fio, street, house):
+def add(list_with_dict, number, fio, street, house):
     """
     Add a new entry in the phone book
     >>> add(1111, 'III', 'QQQ', 55)
@@ -19,7 +15,7 @@ def add(number, fio, street, house):
     return dct.get('number')
 
 
-def delete(value):
+def delete(list_with_dict, value):
     """
     Delete an entry from the phone book
     >>> delete(1234)
@@ -36,7 +32,7 @@ def delete(value):
     return flag
 
 
-def change(key, number='', fio='', street='', house=''):
+def change(list_with_dict, key, number='', fio='', street='', house=''):
     '''
 
     :param key:
@@ -69,7 +65,7 @@ def change(key, number='', fio='', street='', house=''):
     return flag
 
 
-def find(number='', fio='', street='', house=''):
+def find(list_with_dict, number='', fio='', street='', house=''):
     """
     Find an entry in the phone book
     """
