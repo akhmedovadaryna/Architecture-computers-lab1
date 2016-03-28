@@ -1,7 +1,3 @@
-
-
-
-
 def add(list_with_dict, number, fio, street, house):
     """
     Add a new entry in the phone book
@@ -33,16 +29,6 @@ def delete(list_with_dict, value):
 
 
 def change(list_with_dict, key, number='', fio='', street='', house=''):
-    '''
-
-    :param key:
-    :param number:
-    :param fio:
-    :param street:
-    :param house:
-    :return:
-    '''
-
     """
     Change the entry in the phone book
     >>> change(4567, 435, 'III')

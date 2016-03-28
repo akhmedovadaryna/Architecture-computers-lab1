@@ -4,6 +4,7 @@ import pickle
 def save_to_pickle(list_with_dict):
     with open('phonebook.pickle', 'wb') as file:
         pickle.dump(list_with_dict, file)
+    return list_with_dict
 
 
 def init_from_pickle():

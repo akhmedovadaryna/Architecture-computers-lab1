@@ -107,20 +107,20 @@ def edit_conf_menu():
     return input("Enter your choise :  ")
 
 
-def edit_conf(choise):
-    if choise is '1':
+def edit_conf(ch):
+    if ch is '1':
         Configparcer.set_config("JSON")
-    elif choise is '2':
+    elif ch is '2':
         Configparcer.set_config("PICKLE")
-    elif choise is '3':
+    elif ch is '3':
         Configparcer.set_config("YAML")
-    elif choise is not '0':
+    elif ch is not '0':
         print("Wrong! Enter again.\n")
         edit_conf_menu()
 
 
 def save():
-    conf = Configparcer.get_cofig()
+    conf = Configparcer.get_config()
     if conf == "JSON":
         JSON_ser.save_phonebook(list_with_dict)
     elif conf == "PICKLE":
@@ -131,7 +131,7 @@ def save():
 
 def load():
     global list_with_dict
-    conf = Configparcer.get_cofig()
+    conf = Configparcer.get_config()
     if conf == "JSON":
         list_with_dict = JSON_ser.init_phonebook()
     elif conf == "PICKLE":
@@ -140,10 +140,8 @@ def load():
         list_with_dict = YAML_ser.load_from_yaml()
 
 
-
 # вывод приветствия
 print("PHONEBOOK v1.0.3")
-
 
 while 1:
 
@@ -178,7 +176,7 @@ while 1:
         edit_conf(edit_conf_menu())
 
     elif choise == '9':
-        print(Configparcer.get_cofig())
+        print(Configparcer.get_config())
         press_any_key()
 
     else:
