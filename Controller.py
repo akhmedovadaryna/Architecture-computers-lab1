@@ -141,7 +141,7 @@ def load():
 
 
 # вывод приветствия
-print("PHONEBOOK v1.0.3")
+print("PHONEBOOK v1.0.4")
 
 while 1:
 
