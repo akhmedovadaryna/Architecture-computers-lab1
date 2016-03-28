@@ -1,20 +1,9 @@
-import json
 
-file_name = "phonebook"
-
-list_with_dict = []
+import Controller
 
 
-def save_phonebook():
-    with open(file_name, 'w') as file:
-        json.dump(list_with_dict, file)
+list_with_dict = Controller.list_with_dict
 
-
-def init_phonebook():
-    file = open(file_name, 'r')
-    global list_with_dict
-    list_with_dict = json.load(file)
-    file.close()
 
 
 def add(number, fio, street, house):
@@ -25,7 +14,6 @@ def add(number, fio, street, house):
     """
     list_with_dict.append({'number': number, 'FIO': fio,
                            'street': street, 'house': house})
-    save_phonebook()
     i = len(list_with_dict) - 1
     dct = list_with_dict[i]
     return dct.get('number')
@@ -45,11 +33,20 @@ def delete(value):
         else:
             flag = 1
             list_with_dict.pop(i)
-    save_phonebook()
     return flag
 
 
 def change(key, number='', fio='', street='', house=''):
+    '''
+
+    :param key:
+    :param number:
+    :param fio:
+    :param street:
+    :param house:
+    :return:
+    '''
+
     """
     Change the entry in the phone book
     >>> change(4567, 435, 'III')
@@ -69,7 +66,6 @@ def change(key, number='', fio='', street='', house=''):
                 else:
                     dct[l_list[j]] = l[j]
                     j += 1
-    save_phonebook()
     return flag
 
 
