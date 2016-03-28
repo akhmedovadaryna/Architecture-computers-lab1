@@ -15,13 +15,13 @@ def menu():
     """
 
     print("\n MENU ")
-    print("Press 1 if you want see phonebook")
-    print("Press 2 if you want add new record to phonebook")
-    print("Press 3 if you want delete something from phonebook")
-    print("Press 4 if you want edit something in phonebook")
-    print("Press 5 if you want find something in phonebook")
-    print("Press 6 if you want save phonebook")
-    print("Press 7 if you want load phonebook")
+    print("Press 1 if you want load phonebook")
+    print("Press 2 if you want save phonebook")
+    print("Press 3 if you want see phonebook")
+    print("Press 4 if you want add new record to phonebook")
+    print("Press 5 if you want delete something from phonebook")
+    print("Press 6 if you want edit something in phonebook")
+    print("Press 7 if you want find something in phonebook")
     print("Press 8 if you want edit config")
     print("Press 9 if you want view config")
     print("Press 0 if you want exit")
@@ -52,7 +52,7 @@ def add():
     """
     # ввод новой записи
     new_number, new_fio, new_street, new_house = View.read_new_contact()
-    Business_logic.add(new_number, new_fio, new_street, new_house)
+    Business_logic.add(list_with_dict, new_number, new_fio, new_street, new_house)
 
     print("Successfull!")
     press_any_key()
@@ -64,7 +64,7 @@ def delete():
     :return: None
     """
     # выбор что удалять
-    if Business_logic.delete(View.del_choice()):
+    if Business_logic.delete(list_with_dict, View.del_choice()):
         print("Successfull!")
     else:
         print("Not found!")
@@ -81,7 +81,7 @@ def edit():
     # ввод новых значений
     number, fio, street, house = View.new_values()
 
-    if Business_logic.change(key, number, fio, street, house):
+    if Business_logic.change(list_with_dict, key, number, fio, street, house):
         print("Successfull!")
     else:
         print("Not found!")
@@ -95,7 +95,7 @@ def find():
     """
     # ввод критериев поиска
     number, fio, street, house = View.what_to_find()
-    View.view_phonebook(Business_logic.find(number, fio, street, house))
+    View.view_phonebook(Business_logic.find(list_with_dict, number, fio, street, house))
     press_any_key()
 
 
@@ -151,33 +151,36 @@ while 1:
     if choise == '0':
         break
     elif choise == '1':
+        load()
+    elif choise == '2':
+        save()
+    elif choise == '3':
         # вывод телефонной книги
         view()
 
-    elif choise == '2':
+    elif choise == '4':
         # добавление новой записи
         add()
 
-    elif choise == '3':
+    elif choise == '5':
         # удаление записи
         delete()
 
-    elif choise == '4':
+    elif choise == '6':
         # изменение записи
         edit()
 
-    elif choise == '5':
+    elif choise == '7':
         # поиск по телефонной книге
         find()
-    elif choise == '6':
-        save()
-    elif choise == '7':
-        load()
+
     elif choise == '8':
         edit_conf(edit_conf_menu())
+
     elif choise == '9':
         print(Configparcer.get_cofig())
         press_any_key()
+
     else:
         # некорректный выбор
         View.uncorrect()
