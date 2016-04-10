@@ -1,1 +1,2 @@
-YAML
+method serialization = JSON
+type controller = 0

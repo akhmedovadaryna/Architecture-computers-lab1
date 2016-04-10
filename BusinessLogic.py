@@ -6,36 +6,35 @@ __author__ = 'alexandr'
 # https://github.com/akhmedovadaryna/Phonebook/blob/master/phonebook
 
 class Phonebook:
-    def __init__(self):
-        with open("phonebook", 'r') as file:
-            self.phone_list = json.load(file)
+    def __init__(self, phone_list):
+        self.__phone_list = phone_list
 
     def __iter__(self):
-        self.index = 0
+        self.index = -1
         return self
 
     def __next__(self):
-        if self.index == len(self.phone_list) - 1:
+        if self.index == len(self.__phone_list) - 1:
             raise StopIteration
         self.index += 1
-        return self.phone_list[self.index]
+        return self.__phone_list[self.index]
 
     def add(self, number, fio, street, house):
-        self.phone_list.append({'number': number, 'FIO': fio,
+        self.__phone_list.append({'number': number, 'FIO': fio,
                                 'street': street, 'house': house})
 
     def delete(self, value):
         i = 0
-        for dct in self.phone_list:
+        for dct in self.__phone_list:
             if dct.get('number') != value:
                 i += 1
             else:
-                self.phone_list.pop(i)
+                self.__phone_list.pop(i)
 
     def change(self, key, number='', fio='', street='', house=''):
         l = [number, fio, street, house]
         l_list = ['number', 'FIO', 'street', 'house']
-        for dct in self.phone_list:
+        for dct in self.__phone_list:
             if dct.get('number') == key:
                 j = 0
                 while j <= 3:
@@ -50,7 +49,7 @@ class Phonebook:
         q = []
         l = ['number', 'FIO', 'street', 'house']
         l_list = [number, fio, street, house]
-        for dct in self.phone_list:
+        for dct in self.__phone_list:
             j = 0
             a = 0
             b = 0
@@ -65,8 +64,8 @@ class Phonebook:
                 q.append(dct)
         return q
 
+    def view_phonebook(self):
+        for i in self:
+            print(i)
 
-obj = Phonebook()
 
-for i in obj:
-    print(i)
