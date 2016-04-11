@@ -1,8 +1,5 @@
 import json
 
-__author__ = 'alexandr'
-
-
 # https://github.com/akhmedovadaryna/Phonebook/blob/master/phonebook
 
 class Phonebook:
@@ -31,18 +28,23 @@ class Phonebook:
 
     def delete(self, value):
         i = 0
+        f = 0
         for dct in self.__phone_list:
             print(dct)
             if dct.get('number') != value:
                 i += 1
             else:
+                flag = 1
                 self.__phone_list.pop(i)
+        return flag
 
     def change(self, key, number='', fio='', street='', house=''):
+        flag = 0
         l = [number, fio, street, house]
         l_list = ['number', 'FIO', 'street', 'house']
         for dct in self.__phone_list:
             if dct.get('number') == key:
+                flag = 1
                 j = 0
                 while j <= 3:
                     if l[j] == '':
@@ -51,6 +53,7 @@ class Phonebook:
                     else:
                         dct[l_list[j]] = l[j]
                         j += 1
+        return flag
 
     def find(self, number='', fio='', street='', house=''):
         q = []
