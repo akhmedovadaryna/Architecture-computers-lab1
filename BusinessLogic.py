@@ -19,6 +19,12 @@ class Phonebook:
         self.index += 1
         return self.__phone_list[self.index]
 
+    def set_phone_list(self, phone_list):
+        self.__phone_list = phone_list
+
+    def get_phone_list(self):
+        return self.__phone_list
+
     def add(self, number, fio, street, house):
         self.__phone_list.append({'number': number, 'FIO': fio,
                                 'street': street, 'house': house})
@@ -26,6 +32,7 @@ class Phonebook:
     def delete(self, value):
         i = 0
         for dct in self.__phone_list:
+            print(dct)
             if dct.get('number') != value:
                 i += 1
             else:
@@ -64,8 +71,12 @@ class Phonebook:
                 q.append(dct)
         return q
 
-    def view_phonebook(self):
-        for i in self:
-            print(i)
+    def view_phonebook(self, phone_list=None):
+        if phone_list is None:
+            for i in self:
+                print(i)
+        else:
+            for i in phone_list:
+                print(i)
 
 

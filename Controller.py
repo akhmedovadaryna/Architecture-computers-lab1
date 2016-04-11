@@ -140,47 +140,51 @@ def load():
         list_with_dict = YAML_ser.load_from_yaml()
 
 
-# вывод приветствия
-print("PHONEBOOK v1.0.4")
+def main():
+    # вывод приветствия
+    print("PHONEBOOK v1.0.4")
 
-while 1:
+    while 1:
 
-    choise = menu()
-    if choise == '0':
-        break
-    elif choise == '1':
-        load()
-    elif choise == '2':
-        save()
-    elif choise == '3':
-        # вывод телефонной книги
-        view()
+        choise = menu()
+        if choise == '0':
+            break
+        elif choise == '1':
+            load()
+        elif choise == '2':
+            save()
+        elif choise == '3':
+            # вывод телефонной книги
+            view()
 
-    elif choise == '4':
-        # добавление новой записи
-        add()
+        elif choise == '4':
+            # добавление новой записи
+            add()
 
-    elif choise == '5':
-        # удаление записи
-        delete()
+        elif choise == '5':
+            # удаление записи
+            delete()
 
-    elif choise == '6':
-        # изменение записи
-        edit()
+        elif choise == '6':
+            # изменение записи
+            edit()
 
-    elif choise == '7':
-        # поиск по телефонной книге
-        find()
+        elif choise == '7':
+            # поиск по телефонной книге
+            find()
 
-    elif choise == '8':
-        edit_conf(edit_conf_menu())
+        elif choise == '8':
+            edit_conf(edit_conf_menu())
 
-    elif choise == '9':
-        print(Configparcer.get_config())
-        press_any_key()
+        elif choise == '9':
+            print(Configparcer.get_config())
+            press_any_key()
 
-    else:
-        # некорректный выбор
-        View.uncorrect()
+        else:
+            # некорректный выбор
+            View.uncorrect()
 
-print("Thank you!")
+    print("Thank you!")
+
+
+

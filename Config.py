@@ -15,6 +15,12 @@ class Config:
         self.controller = controller
         self.save_config()
 
+    def get_method_serialization(self):
+        return self.method
+
+    def get_controller(self):
+        return self.controller
+
     def save_config(self):
         with open("config", 'wt') as file:
             #    file.write("method serialization = " + self.method)
