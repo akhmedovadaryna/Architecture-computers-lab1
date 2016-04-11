@@ -1,5 +1,3 @@
-import json
-
 # https://github.com/akhmedovadaryna/Phonebook/blob/master/phonebook
 
 class Phonebook:
@@ -24,11 +22,11 @@ class Phonebook:
 
     def add(self, number, fio, street, house):
         self.__phone_list.append({'number': number, 'FIO': fio,
-                                'street': street, 'house': house})
+                                  'street': street, 'house': house})
 
     def delete(self, value):
         i = 0
-        f = 0
+        flag = 0
         for dct in self.__phone_list:
             print(dct)
             if dct.get('number') != value:
@@ -81,5 +79,3 @@ class Phonebook:
         else:
             for i in phone_list:
                 print(i)
-
-

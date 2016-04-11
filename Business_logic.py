@@ -26,7 +26,7 @@ def delete(list_with_dict, value):
             flag = 1
 
             list_with_dict.pop(i)
-
+    return flag
 
 
 def change(list_with_dict, key, number='', fio='', street='', house=''):

@@ -3,40 +3,40 @@ __author__ = 'alexandr'
 
 class Config:
     def __init__(self):
-        self.method = ''
-        self.controller = 0
-        self.load_config()
+        self.__method = ''
+        self.__controller = 0
+        self.__load_config()
 
     def set_method_serialization(self, method):
-        self.method = method
-        self.save_config()
+        self.__method = method
+        self.__save_config()
 
     def set_controller(self, controller):
-        self.controller = controller
-        self.save_config()
+        self.__controller = controller
+        self.__save_config()
 
     def get_method_serialization(self):
-        return self.method
+        return self.__method
 
     def get_controller(self):
-        return self.controller
+        return self.__controller
 
-    def save_config(self):
+    def __save_config(self):
         with open("config", 'wt') as file:
             #    file.write("method serialization = " + self.method)
-            file.write(self.method)
+            file.write(self.__method)
             file.write('\n')
-            file.write(str(self.controller))
+            file.write(str(self.__controller))
             #   file.write("type controller = " + str(self.controller))
 
-    def load_config(self):
+    def __load_config(self):
         with open("config", 'rt') as file:
-            self.controller = file.readline()
-            self.method = file.readline()
+            self.__controller = file.readline()
+            self.__method = file.readline()
 
     def view(self):
-        print(self.controller)
-        print(self.method)
+        print(self.__controller)
+        print(self.__method)
 
 
 
