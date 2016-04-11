@@ -10,14 +10,14 @@ class Phonebook:
         self.__phone_list = phone_list
 
     def __iter__(self):
-        self.index = -1
+        self.__index = -1
         return self
 
     def __next__(self):
-        if self.index == len(self.__phone_list) - 1:
+        if self.__index == len(self.__phone_list) - 1:
             raise StopIteration
-        self.index += 1
-        return self.__phone_list[self.index]
+        self.__index += 1
+        return self.__phone_list[self.__index]
 
     def set_phone_list(self, phone_list):
         self.__phone_list = phone_list
