@@ -1,6 +1,9 @@
 # https://github.com/akhmedovadaryna/Phonebook/blob/master/phonebook
 
 class Phonebook:
+    """
+    class Phonebook
+    """
     def __init__(self, phone_list):
         self.__phone_list = phone_list
 
@@ -21,10 +24,16 @@ class Phonebook:
         return self.__phone_list
 
     def add(self, number, fio, street, house):
+        """
+        Add a new entry in the phone book
+        """
         self.__phone_list.append({'number': number, 'FIO': fio,
                                   'street': street, 'house': house})
 
     def delete(self, value):
+        """
+        Delete an entry from the phone book
+        """
         i = 0
         flag = 0
         for dct in self.__phone_list:
@@ -37,6 +46,9 @@ class Phonebook:
         return flag
 
     def change(self, key, number='', fio='', street='', house=''):
+        """
+        Change an entry from the phone book
+        """
         flag = 0
         l = [number, fio, street, house]
         l_list = ['number', 'FIO', 'street', 'house']
@@ -54,6 +66,9 @@ class Phonebook:
         return flag
 
     def find(self, number='', fio='', street='', house=''):
+        """
+        Find an entry from the phone book
+        """
         q = []
         l = ['number', 'FIO', 'street', 'house']
         l_list = [number, fio, street, house]
@@ -73,6 +88,9 @@ class Phonebook:
         return q
 
     def view_phonebook(self, phone_list=None):
+        """
+        View phone book
+        """
         if phone_list is None:
             for i in self:
                 print(i)

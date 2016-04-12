@@ -4,6 +4,9 @@ __author__ = 'alexandr'
 
 
 class Controller:
+    """
+    class Controller
+    """
     def __init__(self, phonebook, serialization, config):
         self.config = config
         self.serialization = serialization

@@ -2,6 +2,9 @@ __author__ = 'alexandr'
 
 
 class View:
+    """
+    class View
+    """
     @staticmethod
     def read_new_contact():
         """
